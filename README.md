@@ -180,7 +180,12 @@ adb shell getevent -l
 
 ***
 
-# adb命令
+# am命令
+
+
+***
+
+# pm命令
 
 
 ***
