@@ -139,6 +139,47 @@ time mmm frameworks/base/:services -j32
 
 ***
 
+# 日志相关的命令
+
+```makefile
+adb logcat -c && adb logcat -v time  *:E
+adb wait-for-device && adb logcat -c && adb logcat -v time > log.txt
+adb wait-for-device && adb logcat -c && adb shell "logcat | grep debug_hxm"
+adb wait-for-device && adb logcat -c && adb shell "logcat | grep hxm_audio"
+adb logcat -c && adb logcat -b events -b main -b system > log_001.txt
+adb wait-for-device && adb logcat -c && adb logcat -b all > log_001.txt
+
+adb logcat -b events -b main -b system > 2.5_check_slow_01.log
+adb logcat -c && adb shell "logcat | grep dispatchTouchEvent"
+adb logcat -c && adb shell "logcat | grep debug_hxm"
+adb wait-for-device  && adb logcat -s AppTwoOneWidgetView
+adb shell "logcat -c && logcat -b all | grep -E 'RecentsActivity|StatusBar|TaskStackView'"
+adb shell "logcat | grep -i 'RecentsActivity dd'"
+
+只显示Error级别的log：
+adb logcat *:E
+
+直接看Exception的命令：
+adb logcat -s */E
+
+crash日志的tag：
+adb logcat -s AndroidRuntime
+adb logcat -s DEBUG
+
+adb logcat -s Watchdog
+
+抓取kernel log：
+adb shell cat /proc/kmsg > kernel.log
+adb shell dmesg > kernel_001.log
+
+查看touch日志：
+adb shell getevent -l
+```
+
+
+
+***
+
 # adb命令
 
 
