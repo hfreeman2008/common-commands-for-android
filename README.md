@@ -49,7 +49,27 @@ time make framework-res -j64
 
 make MtkSystemUI -j32
 make FMRadio -j64
+
+
 make systemimage -j32
+make clean
+make otapackage
+
+强制生成system.img文件
+make snod
+
+
+make kernel
+make bootimage
+make dtboimage
+
+
+make update-api
+
+编译kernel，刷机boot分区
+
+make  kernel && make  bootimage
+线刷 out\target\product\********\boot.img
 ```
 
 ## ninja
