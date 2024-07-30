@@ -144,6 +144,21 @@ time mmm frameworks/base/:services -j32
 
 
 
+# git
+
+- 代码提交
+```makefile
+git pull ./
+git add .
+git commit -m ""
+git push
+git push master HEAD:refs/for/master
+```
+
+
+
+
+
 ***
 
 
