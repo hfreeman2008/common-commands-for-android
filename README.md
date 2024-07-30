@@ -23,9 +23,9 @@ android 开发的常用命令
 
 # 编译命令
 
-模块编译：
 
-- make
+
+## make
 ```makefile
 make + 模块名
 ```
@@ -44,7 +44,7 @@ make FMRadio -j64
 make systemimage -j32
 ```
 
-- ninja
+## ninja
 
 ```makefile
 ninja + 模块名
@@ -60,7 +60,7 @@ ninja + 模块名
 ```
 
 
-- mmm
+## mmm
 
 ```makefile
 mmm + 模块路径
