@@ -21,6 +21,54 @@ android 开发的常用命令
 
 
 
+# 编译命令
+
+模块编译：
+
+- make
+```makefile
+make + 模块名
+```
+
+
+```makefile
+time make services -j64 
+time make framework-minus-apex -j64
+time make framework-res -j64
+```
+
+- ninja
+
+```makefile
+ninja + 模块名
+```
+
+
+```makefile
+./prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-full_tb8765ap1_bsp_1g.ninja framework-minus-apex  -j32
+
+./prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-full_tb8765ap1_bsp_1g.ninja services  -j32
+
+./prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-full_tb8765ap1_bsp_1g.ninja framework-res  -j32
+```
+
+
+- mmm
+
+```makefile
+mmm + 模块路径
+```
+
+```makefile
+time mmm frameworks/base/ -j32
+time mmm frameworks/base/:services -j32
+```
+
+***
+
+# adb 命令
+
+
 
 
 
