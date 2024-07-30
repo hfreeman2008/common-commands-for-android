@@ -32,9 +32,16 @@ make + 模块名
 
 
 ```makefile
+全编：
+make -j64
+
 time make services -j64 
 time make framework-minus-apex -j64
 time make framework-res -j64
+
+make MtkSystemUI -j32
+make FMRadio -j64
+make systemimage -j32
 ```
 
 - ninja
