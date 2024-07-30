@@ -33,7 +33,8 @@ source build/envsetup.sh && lunch full_ac8257_demo_1g_32-userdebug
 
 ***
 
-## make
+## make命令
+
 ```makefile
 make + 模块名
 ```
@@ -72,7 +73,7 @@ make  kernel && make  bootimage
 线刷 out\target\product\********\boot.img
 ```
 
-## ninja
+## ninja命令
 
 - ninja编译命令
 
@@ -138,13 +139,13 @@ time mmm frameworks/base/:services -j32
 
 ***
 
-# adb 命令
+# adb命令
 
 
 ***
 
 
-# git
+# git命令
 
 - 代码提交
 ```makefile
