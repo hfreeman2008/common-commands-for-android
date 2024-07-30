@@ -23,6 +23,13 @@ android 开发的常用命令
 
 # 编译命令
 
+模块编译前，需要执行如下命令配置环境：
+
+```makefile
+source build/envsetup.sh && lunch full_ac8257_demo_1g_32-user
+或
+source build/envsetup.sh && lunch full_ac8257_demo_1g_32-userdebug
+```
 
 
 ## make
@@ -58,6 +65,9 @@ ninja + 模块名
 
 ./prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-full_tb8765ap1_bsp_1g.ninja framework-res  -j32
 ```
+
+
+ninja命令配置：
 
 
 ## mmm
