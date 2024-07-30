@@ -1,2 +1,7 @@
 # common-commands-for-android
-common commands for android;常用开发命令
+
+android 开发的常用命令
+
+
+
+
