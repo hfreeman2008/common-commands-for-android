@@ -336,6 +336,9 @@ adb shell pm list features
 adb shell pm enable [packagename]
 adb shell pm disable [packagename]
 adb shell pm enable com.android.provision/com.android.provision.WelcomActivity
+
+给应用开权限：
+adb shell pm grant com.android.kkkkk android.permmision.xxxx
 ```
 
 ***
