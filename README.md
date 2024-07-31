@@ -182,6 +182,116 @@ adb shell getevent -l
 
 # am命令
 
+- 启动应用
+
+```makefile
+打开开机向导界面：
+adb shell pm enable com.android.provision/com.android.provision.WelcomActivity
+
+adb shell am start -n com.android.provision/com.android.provision.WelcomActivity
+adb shell am start -n com.android.stk/.StkMenuActivity
+adb shell am start -n com.android.inputmethod.latin/com.android.inputmethod.latin.settings.SettingsActivity
+adb shell am start -n com.android.settings/.inputmethod.InputMethodAndSubtypeEnablerActivity
+adb shell am start -n com.android.settings/.Settings$UsbDetailsActivity
+adb shell am start -n com.android.phone/com.android.phone.EmergencyDialer
+adb shell am start -n com.water.flashlight/.MainActivity
+adb shell am start -n com.android.permissioncontroller/com.android.packageinstaller.permission.ui.GrantPermissionsActivity
+adb shell am start -n  com.android.systemui/.usb.UsbPermissionActivity
+adb shell am start -n  com.google.android.marvin.talkback/com.google.android.accessibility.switchaccess.SwitchAccessPreferenceActivity
+adb shell am start -n com.hisense.firstdemo/com.hisense.firstdemo.MainActivity
+adb shell am start -n com.ju.baselib/com.ju.middleware.MainActivity
+adb shell am start -n com.pve.installapk/com.pve.installapk.MainActivity
+adb shell am start -n  com.android.settings/com.android.settings.Settings
+adb shell am start -n  com.android.settings/com.autochips.atcsettings.mainui.MainActivity
+adb shell am start -n  com.android.ServiceMenu/com.android.ServiceMenu.ServiceMenu
+adb shell am start -a "test.action.USE_CAMERA_OR_MIC" -n  android.appthataccessescameraandmic/.AccessCameraOrMicActivity
+adb shell am start  -n  com.retroidpocket.gameassistant/.activity.MainActivity
+adb shell am start  -n  com.odin2.gameassistant/.activity.MainActivity
+adb shell am start  -n com.odin2.gameassistant/com.odin2.gameassistant.activity.GamepadTestActivity
+adb shell am start -n com.debug.loggerui/.MainActivity
+
+升级界面：
+adb shell am start  -n com.hytera.nrm/com.hytera.nrm.UpgradeActivity
+adb shell am start  -n com.example.android.systemupdatersample/com.example.android.systemupdatersample.ui.BgActivity
+adb shell am start  -n com.example.android.systemupdatersample/com.example.android.systemupdatersample.ui.BgActivity  --es "float_key" "start"  --ez "float_key_finish" "true"
+adb shell am start  -n com.mcc.ler/com.mcc.ler.mvp.view.welcome.WelcomeActivity
+adb shell am start  -n com.mcc.ler/com.mcc.ler.mvp.view.login.LoginActivity
+
+
+工程模式：
+adb shell am start -n com.mediatek.engineermode/.EngineerMode
+
+查看对应应用的详细信息界面：
+adb shell am start -a "android.settings.APPLICATION_DETAILS_SETTINGS" -d "package:sogou.mobile.explorer.flexpai"
+
+```
+
+
+
+- 发送广播
+```makefile
+adb shell am broadcast com.antutu.benchmark.full.3D_RUN
+adb shell am broadcast -a  android.intent.action.BOOT_COMPLETED
+adb shell am broadcast -a  xy.android.nextmedia
+adb shell am broadcast -a  canbus.intent.action.key    --ei "canbus_key" "0x0A"
+adb shell am broadcast -a  canbus.intent.action.key    --ei canbus_key 0x0B
+
+adb shell am broadcast -a  ACTION_XY_AUTO_ADD_UP_BRIGHTNESS --ei "key_brightness" "10"
+adb shell am broadcast -a  ACTION_XY_AUTO_ADD_UP_BRIGHTNESS
+
+adb shell am broadcast -a com.xy.audiofocus.require
+
+相当于：
+Intent intent = new Intent();
+intent.setAction("android.test");
+intent.addFlags(Intent.FLAG_RECEIVER_INCLUDE_BACKGROUND);
+intent.putExtra("key01","value01");
+sendBroadcast(intent);
+
+参数说明
+-a action       指定intent操作，如android.intent.action.VIEW。
+-f flags        向setFlags()支持的intent添加标记。如FLAG_RECEIVER_INCLUDE_BACKGROUND：0x01000000
+–es extra_key extra_string_value        以键值对的形式添加字符串数据。
+–ez extra_key extra_boolean_value       以键值对的形式添加布尔值数据。
+–ei extra_key extra_int_value           以键值对的形式添加整数型数据。
+–el extra_key extra_long_value          以键值对的形式添加长整型数据。
+–ef extra_key extra_float_value         以键值对的形式添加浮点型数据。
+
+
+adb shell am broadcast -a xy.save_zlink.activate_code_to_mcu   --es "activate_code" "111000222"
+adb shell am broadcast -a android.action.MCU_KEY_OUT_TO_SDCARD -n com.xyauto.Settings/.InOutKeyEventReceiver
+adb shell am broadcast -a android.action.MCU_KEY_IN_FROM_SDCARD -n com.xyauto.Settings/.InOutKeyEventReceiver
+adb shell am broadcast -a android.intent.action.SET_BOOT_LOGO --es "filePath" "/sdcard/logo.bmp"  -n com.android.Settings/.NvRamOperationReceiver
+adb shell am broadcast -a com.android.action.powerkey.reboot   -n com.android.Settings/.NvRamOperationReceiver
+adb shell am broadcast -a com.smarteye.mpu  --ei "scanCode" "114"  --ez "longPress" "true"  -p com.smarteye.mpu
+adb shell am broadcast -a com.smarteye.mpu  --ei "scanCode" "187"  --ez "longPress" "true"  -p com.smarteye.mpu
+adb shell am broadcast -a com.smarteye.mpu  --ei "scanCode" "185"  --ez "longPress" "true"  -p com.smarteye.mpu
+
+恢复出厂设置：
+adb shell am broadcast -a android.intent.action.MASTER_CLEAR -f 0x01000000
+
+```
+
+- 其他命令
+
+```makefile
+停止应用
+adb shell am force-stop com.android.launcher
+
+
+查看am和堆列表信息：
+adb shell am stack list
+
+查看将要启动或退出app的包名
+adb shell am monitor
+
+获取配置信息
+adb shell am get-config
+
+强制生成进程的内存镜像 分析OOM
+adb shell am dumpheap PIDxxx /data/xxx.hprof
+```
+
 
 ***
 
