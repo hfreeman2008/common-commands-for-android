@@ -376,6 +376,60 @@ git push
 git push master HEAD:refs/for/master
 ```
 
+***
+
+# 常用命令
+
+## 电池相关的命令
+
+- 电池电量值
+```makefile
+adb shell cat /sys/class/power_supply/battery/capacity
+
+```
+
+- 使用adb查看和修改电池信息
+```makefile
+1,获取电池信息
+adb shell dumpsys battery
+
+Current Battery Service state:
+AC powered: false　　　　　　　　//false表示没使用AC电源
+USB powered: true　　　　　　　　//true表示使用USB电源
+Wireless powered: false　　　　 //false表示没使用无线电源
+status: 2　　　　　　　　　　　　　//2表示电池正在充电，1表示没充电
+health: 2　　　　　　　　　　　　　//2表示电池状态优秀
+present: true　　　　　　　　　　 //true表示已安装电池
+level: 63　　　　　　　　　　　　　//电池百分比
+scale: 100　　　　　　　　　　　　　//满电量时电池百分比为100%（不确定是否正确）
+voltage: 3781　　　　　　　　　　　//电池电压3.781V
+temperature: 250　　　　　　　　　//电池温度为25摄氏度
+technology: Li-ion　　　　　　　　//电池类型为锂电池
+
+2,电池信息设置格式
+$ adb shell dumpsys battery
+　　set [ac|usb|wireless|status|level|invalid] <value>
+　　unplug　　//模拟断开充电
+　　reset　　　//复位
+
+3,设置为AC/USB/Wireless充电
+adb shell dumpsys battery set ac/usb/wireless 1
+4,设置电池为充电状态
+adb shell dumpsys battery set status 2
+5,设置电池为非充电状态
+adb shell dumpsys battery set status 1
+6,设置电量百分比
+adb shell dumpsys battery set level 100
+7,设置断开充电（Android 6.0以上）
+adb shell dumpsys battery unplug
+8,复位，恢复实际状态
+adb shell dumpsys battery reset
+```
+
+
+```makefile
+
+```
 
 
 
