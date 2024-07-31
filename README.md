@@ -343,8 +343,23 @@ adb shell pm grant com.android.kkkkk android.permmision.xxxx
 
 ***
 
-```makefile
+# dumpsys 命令
 
+```makefile
+adb shell dumpsys activity activities
+adb shell "dumpsys activity | grep -A 35 -i 'from top to'"
+adb shell "dumpsys | grep -i -A 4 'mCurrentFocus'"
+
+获取电池信息
+adb shell dumpsys battery
+
+如何获取正在运行的服务列表
+// List all services
+adb shell dumpsys activity services
+
+查看亮度值：
+adb shell dumpsys display
+mBrightness=
 ```
 
 ***
