@@ -174,6 +174,9 @@ adb shell dmesg > kernel_001.log
 
 查看touch日志：
 adb shell getevent -l
+
+查看应用启动的速度：
+adb logcat -c && adb logcat -s ActivityTaskManager
 ```
 
 
@@ -425,6 +428,9 @@ adb shell dumpsys battery unplug
 8,复位，恢复实际状态
 adb shell dumpsys battery reset
 ```
+
+***
+
 
 
 ```makefile
