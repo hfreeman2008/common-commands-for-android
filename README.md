@@ -180,7 +180,9 @@ adb shell getevent -l
 
 ***
 
+
 # am 命令
+
 
 - 启动应用
 
@@ -226,6 +228,7 @@ adb shell am start -a "android.settings.APPLICATION_DETAILS_SETTINGS" -d "packag
 
 ```
 
+***
 
 
 - 发送广播
@@ -272,6 +275,8 @@ adb shell am broadcast -a android.intent.action.MASTER_CLEAR -f 0x01000000
 
 ```
 
+***
+
 - 其他命令
 
 ```makefile
@@ -300,13 +305,40 @@ adb shell am dumpheap PIDxxx /data/xxx.hprof
 
 ```makefile
 
+显示应用列表：
+adb  shell pm list package
+
+查看包名和文件名对应表
+adb shell pm list packages -f
+
+显示应用位置路径：
+adb  shell pm path com.jamdeo.tv.vod
+清除应用数据：
+adb  shell pm clear com.jamdeo.tv.vod
+
+
+查看disable packagename
+adb shell pm list packages -d
+
+查看enable packagename
+adb shell pm list packages -e
+
+查看system app packagename
+adb shell pm list packages -s
+
+查看第三方app packagename
+adb shell pm list packages -3
+
+查看features列表
+adb shell pm list features
+
+# Enable/Disable package
+adb shell pm enable [packagename]
+adb shell pm disable [packagename]
+adb shell pm enable com.android.provision/com.android.provision.WelcomActivity
 ```
 
-
-```makefile
-
-```
-
+***
 
 ```makefile
 
