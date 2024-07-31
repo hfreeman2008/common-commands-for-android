@@ -33,7 +33,7 @@ source build/envsetup.sh && lunch full_ac8257_demo_1g_32-userdebug
 
 ***
 
-## make命令
+## make 命令
 
 ```makefile
 make + 模块名
@@ -73,7 +73,7 @@ make  kernel && make  bootimage
 线刷 out\target\product\********\boot.img
 ```
 
-## ninja命令
+## ninja 命令
 
 - ninja编译命令
 
@@ -180,7 +180,7 @@ adb shell getevent -l
 
 ***
 
-# am命令
+# am 命令
 
 - 启动应用
 
@@ -295,8 +295,22 @@ adb shell am dumpheap PIDxxx /data/xxx.hprof
 
 ***
 
-# pm命令
+# pm 命令
 
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
 
 ***
 
