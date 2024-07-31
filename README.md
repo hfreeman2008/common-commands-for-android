@@ -452,6 +452,34 @@ adb shell cat /proc/1611/cgroup
 
 
 
+***
+
+## aapt-查看apk的信息：
+
+```makefile
+aapt d badging ./Ctrip_RY.apk > aapt_info.txt
+```
+
+***
+
+
+
+
+```makefile
+
+```
+
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
 
 ***
 
