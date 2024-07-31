@@ -431,10 +431,23 @@ adb shell dumpsys battery reset
 
 ***
 
+## 如何查看应用的 oom_adj
 
-
+以launcher为例：
 ```makefile
+adb shell ps -ef | grep launcher
+u0_a48         1611    442 0 01:42:20 ?     00:00:03 com.android.launcher3
 
+得到应用id:1611
+
+查看：
+adb shell cat /proc/1611/oom_adj
+adb shell cat /proc/1611/oom_score
+adb shell cat /proc/1611/oom_score_adj
+
+
+事实上应用的许多信息都在/proc/1611/目录下：
+adb shell cat /proc/1611/cgroup
 ```
 
 
