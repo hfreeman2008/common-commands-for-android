@@ -1160,6 +1160,29 @@ adb reboot ftmmode
 
 ***
 
+## 应用签名
+
+```makefile
+使用platform.x509.pem和platform.pk8 手动签名
+1.准备 signapk.jar ,platform.x509.pem ,platform.pk8,libconscrypt_openjdk_jni.so文件和需要签名apk放到在ubuntu服务器同级目录下
+2.命令行进入到此目录下
+3.执行命令：
+java -Djava.library.path=. -jar signapk.jar platform.x509.pem platform.pk8 aa.apk aa_signed.apk
+4.验证app签名
+keytool -list -printcert -jarfile LeeTest_debug_v1.1-debug.apk
+```
+
+
+```makefile
+使用文件来签名：
+1 Android的签名文件存放于系统源码的 build/target/product/security/目录下
+2 Android自带的签名工具为 signapk.jar， 可以在源码编译目录out中找到，具体路径为：out/host/linux-x86/framework/signapk.jar    以上APK具有系统权限，重新签名应该使用platform签名文件进行签名。
+3.将对应权限的签名文件platform.pk8、platform.x509.pem， 签名工具 signapk.jar， 以及需要签名的apk（假设 old.apk） 放到同一目录下，打开linux终端（windows cmd也可以），进入该目录，进行重新签名：
+java -jar signapk.jar platform.x509.pem platform.pk8 old.apk new.apk
+4.重新生成的new.apk就可以安装在我们的Android设备上了。
+```
+
+***
 
 ```makefile
 
@@ -1175,6 +1198,17 @@ adb reboot ftmmode
 
 ```
 
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+***
 
 # 参考资料
 
