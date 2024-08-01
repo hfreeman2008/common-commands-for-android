@@ -805,10 +805,14 @@ where adb
 
 ***
 
-```makefile
+## date 查看时间
 
+```makefile
+adb shell date
+Sat Sep 12 11:20:00 CST 2020
 ```
 
+***
 
 ```makefile
 
