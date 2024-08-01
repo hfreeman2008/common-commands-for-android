@@ -519,6 +519,65 @@ ls -lhaR */*
 
 *** 
 
+## settings数据库
+
+```makefile
+usage: settings [–user NUM] get namespace key
+settings [–user NUM] put namespace key value
+settings [–user NUM] delete namespace key
+
+‘namespace’ is one of {system, secure, global}, case-insensitive
+
+If ‘–user NUM’ is not given, the operations are performed on the owner user.
+
+
+修改数据库的键值：
+adb shell settings get/set Global airplane_mode_on
+
+adb shell settings put system/global [key] [value]
+adb shell settings put system navigation_bar_key_mode 1
+adb shell settings get system/global [key]
+
+锁屏时间：
+adb shell settings get system screen_off_timeout
+屏幕亮度：
+adb shell settings get system screen_brightness
+adb shell settings get system screen_brightness_float
+adb shell settings get secure screensaver_enabled
+adb shell settings get system expand_screen_on
+
+
+自动调节亮度：
+adb shell settings get system screen_brightness_mode
+```
+
+默认settings数据库的存放位置：
+```makefile
+/data/user_de/0/com.android.providers.settings
+
+adb shell ls -lha /data/misc/profiles/cur/0/com.android.providers.settings
+adb shell ls -lha /data/misc/profiles/ref/com.android.providers.settings
+adb shell ls -lha /data/data/com.android.providers.settings
+adb shell ls -lha /data/user_de/0/com.android.providers.settings
+adb shell ls -lha /config/sdcardfs/com.android.providers.settings
+
+
+adb shell ls -lha /data/system/users/0
+-rw------- 1 system system  13K 2018-10-15 09:02 settings_global.xml
+-rw------- 1 system system 7.3K 2018-10-15 08:55 settings_secure.xml
+-rw------- 1 system system 1.1K 2022-06-07 14:28 settings_ssaid.xml
+-rw------- 1 system system  15K 2018-10-15 08:54 settings_system.xml
+```
+
+
+使用dumpsys读取settings数据：
+```makefile
+adb shell dumpsys settings
+```
+
+***
+
+
 ```makefile
 
 ```
@@ -529,10 +588,10 @@ ls -lhaR */*
 ```
 
 
-
 ```makefile
 
 ```
+
 
 ```makefile
 
