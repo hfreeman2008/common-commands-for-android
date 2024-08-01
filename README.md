@@ -177,6 +177,10 @@ adb shell getevent -l
 
 查看应用启动的速度：
 adb logcat -c && adb logcat -s ActivityTaskManager
+
+dropbox日志：
+对于触发watchdog时，生成的dropbox文件的tag是system_server_watchdog，内容是traces以及相应的blocked信息
+adb pull /data/system/dropbox/ ./dropbox
 ```
 
 
