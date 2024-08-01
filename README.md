@@ -787,10 +787,15 @@ adb pull /data/app/com.android.chrome-p9BG4wfhjDRXOYVce8ZAFA==/base.apk ./chrome
 
 ***
 
+## screenrecord 录屏
 
 ```makefile
-
+adb shell screenrecord /sdcard/screenrecord_black_play.mp4
+adb pull /sdcard/screenrecord_black_play.mp4
 ```
+
+***
+
 
 ```makefile
 
