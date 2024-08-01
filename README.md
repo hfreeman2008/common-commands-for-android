@@ -602,7 +602,7 @@ adb shell settings get system screen_brightness_float
 ls -lhaR */*
 ```
 
-
+显示文件security context
 ```makefile
 adb shell ls -lsaZ
 ```
