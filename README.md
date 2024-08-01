@@ -577,11 +577,31 @@ adb shell dumpsys settings
 
 ***
 
+## input-模拟按键：
 
 ```makefile
+模拟电源按键：
+adb shell input keyevent 26
+模拟menu按键：
+adb shell input keyevent 1
+模拟home按键：
+adb shell input keyevent 3
+模拟back按键：
+adb shell input keyevent 4
+模拟音量加按键：
+adb shell input keyevent 24
+模拟音量减按键：
+adb shell input keyevent 25
 
+KEYCODE_ENTER
+adb shell input keyevent 66
+
+adb shell sendevent /dev/input/event0 1 299 1 //按下menu
+adb shell sendevent /dev/input/event0 1 299 0 //抬起menu
 ```
 
+
+***
 
 ```makefile
 
