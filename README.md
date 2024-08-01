@@ -389,7 +389,7 @@ mBrightness=
 
 # git 命令
 
-- 代码提交
+## 代码提交
 ```makefile
 git pull ./
 git add .
@@ -398,7 +398,7 @@ git push
 git push master HEAD:refs/for/master
 ```
 
-- git reset
+## git reset
 
 ```makefile
 1.git reset --soft HEAD^
@@ -419,6 +419,17 @@ git reset --hard id
 中止一个正在进行的 git rebase操作，并将分支恢复到操作之前的状态
 git rebase --abort
 ```
+
+## apply 合入patch
+```makefile
+git apply --stat 0001-test.patch
+git apply --check 0001-test.patch
+git apply 0001-test.patch合入到本地
+
+git apply --check disable_paperless_func.diff
+git apply disable_paperless_func.dif
+```
+
 
 ***
 
