@@ -1036,9 +1036,21 @@ netmgrd 1097 radio 145u IPv6 0t0 49790 UDP []:44750->[]:0
 
 ***
 
-```makefile
+## systrace 命令
 
+```makefile
+python systrace.py -t 5 -o mytrace.html wm gfx input view sched freq
+
+python systrace.py -b 32768 -t 5 -o mytrace.html gfx input view webview wm am sm audio video camera hal app res dalvik rs bionic power sched irq freq idle disk mmc load sync workq memreclaim regulators
+
+./systrace.py -t 10 sched gfx view wm am app webview -a <package-name>
+
+adb devices && adb wait-for-device && python systrace.py -t 10 boot_trace_001.html sched gfx view wm am app webview res dalvik freq idle -a com.jamdeo.tv.vod
+
+./systrace.py -t 60 boot_trace_001.html sched gfx view wm am app webview res dalvik freq idle -a com.jamdeo.tv.vod
 ```
+
+***
 
 ```makefile
 
