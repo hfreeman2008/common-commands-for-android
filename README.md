@@ -346,6 +346,26 @@ adb shell pm grant com.android.kkkkk android.permmision.xxxx
 
 ***
 
+# wm 命令
+
+- wm 使用adb设置屏幕尺寸
+
+```makefile
+adb shell wm size
+Physical size: 1440x1920
+
+adb shell wm size 2000x1920
+adb shell wm size 1520x1620
+adb shell wm size 696x1620
+```
+
+- 解除屏幕锁屏
+```makefile
+adb shell  wm dismiss-keyguard
+```
+
+***
+
 # dumpsys 命令
 
 ```makefile
