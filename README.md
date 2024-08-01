@@ -830,11 +830,42 @@ Sat Sep 12 11:20:00 CST 2020
 11.adb remount
 ```
 
+***
+
+## bootchart 使用命令
+
+```makefile
+adb shell ls -lha /data/bootchart
+adb shell touch /data/bootchart/enabled
+adb reboot
+adb shell ls -lha /data/bootchart
+adb root
+adb remount
+adb pull /data/bootchart/  bootchart/
+adb shell rm /data/bootchart/enabled
+adb shell ls -lha /data/bootchart
+sudo apt-get install bootchart
+sudo apt-get install pybootchartgui
+tar -zcf bootchart.tgz *
+bootchart bootchart.tgz
+```
+
+***
+
 
 ```makefile
 
 ```
 
+
+```makefile
+
+```
+
+
+```makefile
+
+```
 
 ***
 
