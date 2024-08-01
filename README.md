@@ -979,10 +979,12 @@ netmgrd 1097 radio 145u IPv6 0t0 49790 UDP []:44750->[]:0
 
 ***
 
+## monkey 测试
 ```makefile
-
+/system/bin/monkey -v -v --throttle 500 -s 800 --monitor-native-crashes --ignore-crashes --ignore-timeouts --ignore-security-exceptions --kill-process-after-error --pkg-blacklist-file /sdcard/xml/blackList 500000
 ```
 
+***
 
 ```makefile
 
