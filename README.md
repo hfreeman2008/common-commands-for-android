@@ -1150,11 +1150,15 @@ Usage: iotop [-h] [-P] [-d <delay>] [-n <cycles>] [-s <column>]
 pid, read, write, total, io, swap, faults, sched, mem or delay.
 ```
 
+***
 
+## 进入ftm模式命令
 
 ```makefile
-
+adb reboot ftmmode
 ```
+
+***
 
 
 ```makefile
