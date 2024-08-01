@@ -899,20 +899,100 @@ adb pull /data/user_de/0/com.android.shell/files/bugreports/  ./
 ```
 
 ***
+## ps 命令
 
 ```makefile
+adb shell ps --help
 
-```
+usage: ps [-AadefLlnwZ] [-gG GROUP,] [-k FIELD,] [-o FIELD,] [-p PID,] [-t TTY,] [-uU USER,]
 
-```makefile
+List processes.
+Which processes to show (-gGuUpPt selections may be comma separated lists):
+-A All -a Has terminal not session leader
+-d All but session leaders -e Synonym for -A
+-g In GROUPs -G In real GROUPs (before sgid)
+-p PIDs (--pid) -P Parent PIDs (--ppid)
+-s In session IDs -t Attached to selected TTYs
+-T Show threads also -u Owned by selected USERs
+-U Real USERs (before suid)
 
-```
+Output modifiers:
+-k Sort FIELDs (-FIELD to reverse) -M Measure/pad future field widths
+-n Show numeric USER and GROUP -w Wide output (don't truncate fields)
 
-```makefile
+Which FIELDs to show. (-o HELP for list, default = -o PID,TTY,TIME,CMD)
+-f Full listing (-o USER:12=UID,PID,PPID,C,STIME,TTY,TIME,ARGS=CMD)
+-l Long listing (-o F,S,UID,PID,PPID,C,PRI,NI,ADDR,SZ,WCHAN,TTY,TIME,CMD)
+-o Output FIELDs instead of defaults, each with optional :size and =title
+-O Add FIELDS to defaults
+-Z Include LABEL
 
+命令参数
+-t 显示进程里的所有子线程
+-c 显示进程耗费的CPU时间
+-p 显示进程优先级,nice值,调度策略
+-P 显示进程，通常是bg(后台进程)或fg(前台进程)
+-x 显示进程耗费的用户时间和系统时间，格式:(u:0, s:0)，单位:秒(s)。
+
+adb shell ps -A
+adb shell ps -AT
+adb shell ps -p pid
+adb shell ps -p pid -T
+adb shell ps -p pid -T -f
+adb shell ps -p pid -T -c
 ```
 
 ***
+
+
+## 查看binder对应uid的应用名
+```makefile
+adb shell "ps -A | grep u0_"
+
+u0_a113 2937 1531 6668044 227524 ep_poll 0 S com.android.systemui
+u0_a71 3025 1531 5238696 103760 ep_poll 0 S com.android.wallpaper.livepicker
+u0_a97 3057 1531 5164172 101804 ep_poll 0 S com.redteamobile.virtual.softsim
+```
+
+***
+
+## 查看应用的pid
+```makefile
+adb shell "ps -A | grep packageName"
+
+USER PID PPID VSZ RSS WCHAN ADDR S NAME
+root 1 0 68416 11148 ep_poll 0 S init
+root 2 0 0 0 kthreadd 0 S [kthreadd]
+```
+
+***
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+```makefile
+
+```
+
+```makefile
+
+```
+
+```makefile
+
+```
 
 
 # 参考资料
