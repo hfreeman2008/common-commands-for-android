@@ -862,10 +862,46 @@ find ./out/ -name "PvCanset*" | xargs rm -rf
 
 ***
 
+## chmod 命令
+
+```makefile
+chmod ug+w,o-w file1.txt file2.txt
+chmod a+r file1.txt
+chmod 777 file.txt
+
+linux 权限:
+r: 对应数值4
+w: 对应数值2
+x：对应数值1
+－：对应数值0
+
+owner-group-other
+
+-rwx------:等于数字表示700。
+-rwxr―r--:等于数字表示744。
+-rw-rw-r-x:等于数字表示665。
+
+who 用户类型    说明
+u   user    文件所有者
+g   group   文件所有者所在组
+o   others  所有其他用户
+a   all 所用用户,相当于 ugo
+```
+
+
+***
+
 ```makefile
 
 ```
 
+```makefile
+
+```
+
+```makefile
+
+```
 
 ```makefile
 
