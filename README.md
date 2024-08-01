@@ -796,11 +796,14 @@ adb pull /sdcard/screenrecord_black_play.mp4
 
 ***
 
+## where 查看命令位置
 
+查看adb命令位置：
 ```makefile
-
+where adb
 ```
 
+***
 
 ```makefile
 
