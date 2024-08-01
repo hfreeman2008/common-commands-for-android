@@ -814,8 +814,20 @@ Sat Sep 12 11:20:00 CST 2020
 
 ***
 
-```makefile
+## 机器未解锁导致 adb remount 不成功
 
+```makefile
+1.设置--开发者选项--OEM解锁--on
+2.adb reboot bootloader
+3.fastboot flashing unlock (fastboot oem unlock)
+4.fastboot getvar unlocked
+5.fastboot reboot
+6.adb root
+7.adb disable-verity
+8.adb reboot
+9.adb wait-for-device
+10.adb root
+11.adb remount
 ```
 
 
