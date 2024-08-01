@@ -494,9 +494,6 @@ adb shell cat /sys/class/leds/wled/brightness
 adb root
 adb shell cat /sys/class/backlight/panel0-backlight/brightness
 adb shell echo 255 > /sys/class/backlight/panel0-backlight/brightness
-
-
-
 ```
 
 查看亮度值：
@@ -505,6 +502,12 @@ adb shell dumpsys display
 mBrightness=
 ```
 
+屏幕亮度：
+
+```makefile
+adb shell settings get system screen_brightness
+adb shell settings get system screen_brightness_float
+```
 
 *** 
 
