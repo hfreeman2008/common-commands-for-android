@@ -1083,11 +1083,18 @@ adb reboot
 
 ***
 
+## dd 填充磁盘空间命令
 
 ```makefile
-
+dd if=/dev/zero of=/data/z.txt bs=1048576 count=210
+of=后面的是目标路径，
+z.tx是文件名称，
+bs=后面的是一次写多大的块，
+count是指写多少块，
+bs*count就是创建的文件大小
 ```
 
+***
 
 ```makefile
 
