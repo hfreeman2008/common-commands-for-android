@@ -634,8 +634,21 @@ adb shell svc nfc disable
 
 ***
 
-```makefile
+## 启动关闭开机动画
 
+```makefile
+# 启动开机动画
+adb shell setprop service.bootanim.exit 0
+adb shell setprop ctl.start bootanim
+
+# 关闭开机动画
+adb shell setprop ctl.stop bootanim
+# 或者
+adb shell setprop service.bootanim.exit 1
+
+开机动画时：
+adb shell getprop ctl.stop bootanim
+bootanim
 ```
 
 
