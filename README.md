@@ -603,10 +603,36 @@ adb shell sendevent /dev/input/event0 1 299 0 //抬起menu
 
 ***
 
-```makefile
+## svc 命令
 
+```makefile
+打开wifi，关闭wifi
+Turn on/off Wi-Fi
+adb shell svc wifi disable
+adb shell svc wifi enable
+
+打开数据连接，关闭数据连接
+Turn on/off mobile data
+adb shell svc data [enable|disable]
+
+手机重启
+adb shell svc power reboot
+
+手机关机
+adb shell svc power shutdown
+
+打开和关闭蓝牙BT
+adb root
+adb shell svc bluetooth enable
+adb shell svc bluetooth disable
+
+打开和关闭NFC
+adb root
+adb shell svc nfc enable
+adb shell svc nfc disable
 ```
 
+***
 
 ```makefile
 
