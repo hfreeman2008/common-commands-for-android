@@ -853,10 +853,14 @@ bootchart bootchart.tgz
 ***
 
 
-```makefile
+## 将查找到的文件全部删除
 
+```makefile
+find ./out/ -name "PvCanset*" -exec rm -rf {} \;
+find ./out/ -name "PvCanset*" | xargs rm -rf
 ```
 
+***
 
 ```makefile
 
