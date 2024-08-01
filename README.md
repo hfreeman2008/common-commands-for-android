@@ -400,6 +400,33 @@ git reset --hard id
 git rebase --abort
 ```
 
+***
+
+# repo forall 全局搜索所有的git 库
+
+```makefile
+repo forall -p -c git log --grep 'edddd'
+repo forall -p -c git log --after=2020-10-30 --before=2020-10-xx --author=xiaoming.he
+
+repo forall -p -c git log --after=2023-10-19 --before=2023-10-24 > log_notification_code.txt
+
+repo forall -p -c git diff
+
+
+修改时间：Mon Feb 27 10:12:21 2023 +0800
+./repo forall -c 'commitID=`git log --before "2023-2-27 10:12" -1 --pretty=format:"%H"`;git reset --hard $commitID'
+
+批量取到特定日期修改
+repo forall -c 'commitId=`git log --before "2019-09-12 07:00" -1 --pretty=format:"%H"`; git reset --hard $commitId'
+
+
+批量清除目录中的临时文件/目录
+repo forall -c "git clean -xdf"
+repo forall -c "git clean -df && git reset --hard"
+repo forall -c "git clean -df && git reset --hard && git reset --hard HEAD^"
+```
+
+
 
 ***
 
