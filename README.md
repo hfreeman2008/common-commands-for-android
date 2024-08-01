@@ -588,7 +588,7 @@ ls -lhaR */*
 
 *** 
 
-## settings数据库
+## settings 数据库
 
 ```makefile
 usage: settings [–user NUM] get namespace key
@@ -644,7 +644,37 @@ adb shell ls -lha /data/system/users/0
 adb shell dumpsys settings
 ```
 
+
+
+设置屏幕方向
+
+```makefile
+adb shell settings put system accelerometer_rotation 0
+adb shell settings put system user_rotation 3
+
+以编程方式示例：
+import android.provider.Settings;
+
+Settings.System.putInt(getContentResolver(),Settings.System.ACCELEROMETER_ROTATION,0);
+Settings.System.putInt(etContentResolver(),Settings.System.USER_ROTATION,3);
+
+说明：
+禁用 accelerometer_rotation 并设置 user_rotation
+
+user_rotation Values:
+
+0 # Protrait
+1 # Landscape
+2 # Protrait Reversed
+3 # Landscape Reversed
+accelerometer_rotation Values:
+
+0 # Stay in the current rotation
+1 # Rotate the content of the screen
+```
+
 ***
+
 
 ## input-模拟按键：
 
