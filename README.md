@@ -662,6 +662,57 @@ adb shell getprop ctl.stop bootanim
 bootanim
 ```
 
+***
+
+## 查看 Service 信息
+
+```makefile
+查看系统服务列表：
+adb shell service list
+Found 1 services:
+0 phone: [com.android.internal.telephony.ITelephony]
+
+检查Service是否存在：
+adb shell service check phone
+Service phone: found
+
+使用Service：
+adb shell service call phone 2 s16 "10086"
+```
+
+如何获取正在运行的服务列表
+```makefile
+// List all services
+adb shell dumpsys activity services
+```
+
+***
+
+
+```makefile
+
+```
+
+
+
+```makefile
+
+```
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
 
 ```makefile
 
