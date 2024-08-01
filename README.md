@@ -1063,13 +1063,46 @@ adb devices && adb wait-for-device && python systrace.py -t 10 boot_trace_001.ht
 
 ***
 
+## 开机向导
+
+关闭开机向导
+```makefile
+adb shell settings put secure user_setup_complete 1 && adb shell settings put global device_provisioned 1 && adb shell am force-stop com.google.android.setupwizard
+
+adb shell settings put secure user_setup_complete 1 && adb shell put global device_provisioned 1 && adb reboot
+```
+
+重新显示开机向导
+```makefile
+adb shell settings put global device_provisioned 0
+adb shell settings put secure user_setup_complete 0
+adb shell pm enable com.android.provision/com.android.provision.DefaultActivity
+adb reboot
+```
+
+
+***
+
+
 ```makefile
 
 ```
 
+
 ```makefile
 
 ```
+
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
 
 ```makefile
 
