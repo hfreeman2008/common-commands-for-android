@@ -687,12 +687,56 @@ adb shell dumpsys activity services
 ```
 
 ***
+## 如何导出手机的apk(以chrome为例)
 
+1.在手机上打开此应用
 
+2.执行命令：
 ```makefile
+adb shell "dumpsys | grep -i -A 75 'from top to'"
 
+可以看到chrome的apk包名：com.android.chrome
+
+Display #0 (activities from top to bottom):
+
+Stack #113: type=standard mode=fullscreen
+isSleeping=false
+mBounds=Rect(0, 0 - 0, 0)
+Task id #117
+mBounds=Rect(0, 0 - 0, 0)
+mMinWidth=-1
+mMinHeight=-1
+mLastNonFullscreenBounds=null
+* TaskRecord{84350b5 #117 A=com.android.chrome U=0 StackId=113 sz=1}
+userId=0 effectiveUid=u0a168 mCallingUid=u0a168 mUserSetupComplete=true mCallingPackage=com.android.chrome
+affinity=com.android.chrome
+intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x14002000 cmp=com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity}
+mActivityComponent=com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity
+autoRemoveRecents=false isPersistable=true numFullscreen=1 activityType=1
+rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+Activities=[ActivityRecord{ee2b83d u0 com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity t117}]
+askedCompatMode=false inRecents=true isAvailable=true
+mRootProcess=ProcessRecord{16afbaf 8636:com.android.chrome/u0a168}
+stackId=113
+hasBeenVisible=true mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=true isResizeable=true lastActiveTime=233617198 (inactive for 7s)
+* Hist #0: ActivityRecord{ee2b83d u0 com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity t117}
+packageName=com.android.chrome processName=com.android.chrome
+launchedFromUid=10168 launchedFromPackage=com.android.chrome userId=0
 ```
 
+3.找到此apk的位置：
+```makefile
+adb shell pm path com.android.chrome
+package:/data/app/com.android.chrome-p9BG4wfhjDRXOYVce8ZAFA==/base.apk
+```
+
+4.导出此apk：
+```makefile
+adb pull /data/app/com.android.chrome-p9BG4wfhjDRXOYVce8ZAFA==/base.apk ./chrome.apk
+```
+
+
+***
 
 
 ```makefile
