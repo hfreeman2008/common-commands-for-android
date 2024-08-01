@@ -367,8 +367,7 @@ mBrightness=
 
 ***
 
-
-# git命令
+# git 命令
 
 - 代码提交
 ```makefile
@@ -378,6 +377,29 @@ git commit -m ""
 git push
 git push master HEAD:refs/for/master
 ```
+
+- git reset
+
+```makefile
+1.git reset --soft HEAD^
+未push但commit回退,会保留代码
+
+2.git reset --hard HEAD^
+不会保留未提交的代码，回退到上个版本
+
+代码还原和清除修改
+git reset --hard && git clean -df
+git reset --hard id && git clean -df
+git reset --hard id && git clean -df && git reset --hard HEAD^
+git reset --hard id
+```
+
+- git rebase
+```makefile
+中止一个正在进行的 git rebase操作，并将分支恢复到操作之前的状态
+git rebase --abort
+```
+
 
 ***
 
