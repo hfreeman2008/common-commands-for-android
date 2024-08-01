@@ -967,11 +967,17 @@ root 2 0 0 0 kthreadd 0 S [kthreadd]
 
 ***
 
+## lsof 查看是否有联网行为
 
 ```makefile
+adb shell "lsof | grep -i ipv"
 
+netmgrd 1097 radio 142u IPv6 0t0 49794 UDP []:42358->[]:0
+netmgrd 1097 radio 143u IPv4 0t0 49788 UDP :41211->:0
+netmgrd 1097 radio 145u IPv6 0t0 49790 UDP []:44750->[]:0
 ```
 
+***
 
 ```makefile
 
