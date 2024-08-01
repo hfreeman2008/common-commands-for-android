@@ -1115,6 +1115,27 @@ adb shell kill -3 PIDxxx
 
 ***
 
+## debuggerd 获取指定Native进程的traces信息
+```makefile
+adb shell debuggerd -b 17529 //可指定进程pid
+```
+
+***
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+```makefile
+
+```
+
+
 ```makefile
 
 ```
