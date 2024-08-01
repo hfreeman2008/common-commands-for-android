@@ -1100,10 +1100,20 @@ bs*count就是创建的文件大小
 
 ***
 
-```makefile
+## kill 命令
 
+```makefile
+kill应用
+adb shell kill -9 PIDXXX
+
+强制让进程gc
+adb shell kill -10 PIDXXX
+
+强制生成trace(/data/anr/traces.txt)
+adb shell kill -3 PIDxxx
 ```
 
+***
 
 ```makefile
 
