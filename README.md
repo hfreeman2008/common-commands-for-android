@@ -891,9 +891,14 @@ a   all 所用用户,相当于 ugo
 
 ***
 
-```makefile
+## bugrepport
 
+```makefile
+adb bugreport
+adb pull /data/user_de/0/com.android.shell/files/bugreports/  ./
 ```
+
+***
 
 ```makefile
 
