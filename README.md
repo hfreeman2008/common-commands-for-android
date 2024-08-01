@@ -511,6 +511,29 @@ adb shell settings get system screen_brightness_float
 
 *** 
 
+## 显示当前目录下的所有文件包括子目录下的文件
+
+```makefile
+ls -lhaR */*
+```
+
+*** 
+
+```makefile
+
+```
+
+
+```makefile
+
+```
+
+
+
+```makefile
+
+```
+
 ```makefile
 
 ```
