@@ -482,17 +482,31 @@ user版本进入9008刷机模式：
 长按电源，让机器开机，在开机时，长按一侧的中间的拍照和录音这二个键22秒，就可以进入9008刷机模式
 ```
 
-***
+*** 
+
+## 获取屏幕亮度：
 
 ```makefile
+adb root
+cat /sys/class/leds/wled/brightness
+adb shell cat /sys/class/leds/wled/brightness
+
+adb root
+adb shell cat /sys/class/backlight/panel0-backlight/brightness
+adb shell echo 255 > /sys/class/backlight/panel0-backlight/brightness
+
+
 
 ```
 
-
+查看亮度值：
 ```makefile
-
+adb shell dumpsys display
+mBrightness=
 ```
 
+
+*** 
 
 ```makefile
 
