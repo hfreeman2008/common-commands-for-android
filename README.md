@@ -1122,10 +1122,14 @@ adb shell debuggerd -b 17529 //可指定进程pid
 
 ***
 
-```makefile
+## md5sum 命令
 
+```makefile
+md5sum filename
+md5sum *
 ```
 
+***
 
 ```makefile
 
