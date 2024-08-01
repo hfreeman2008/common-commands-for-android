@@ -634,6 +634,17 @@ adb shell svc nfc disable
 
 ***
 
+## shutdown 命令
+
+```makefile
+shutdown -h +5    # 在5分钟后关机
+shutdown -h +60
+shutdown -h 20:00 # 在今天的20:00关机
+```
+
+***
+
+
 ## 启动关闭开机动画
 
 ```makefile
