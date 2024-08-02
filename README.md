@@ -391,6 +391,26 @@ mBrightness=
 
 ***
 
+# gerrit 配置
+
+```makefile
+1.进入网址--自己的姓名--settings,ContactInfo 填写自己的邮箱，完成注册邮箱;
+2.生成ssh key并添加到配置中;
+3.git config --global user.name "xiaoming.he"
+4.git config --global user.email xxx@example.com
+5.生成SSH key，输入命令ssh-keygen -t rsa，一路按回车既可，不要乱输入东西; 
+6.进入网址--自己的姓名--settings;
+7.cat ~/.ssh/id_rsa.pub，将输出的内容粘贴到Add SSH Public Key中，点击Add按钮；
+8.确定自己的项目的下载路径：
+代码下载路径：
+BROWSE--Repositories--点击 自己的项目名--SSH--选择Clone下载地址
+git clone "ssh://hexiaoming@192.168.1.1:29418/项目名/XXX"
+9.有时需要根据项目配置config文件
+vim ~/.ssh/config
+```
+
+***
+
 # git 命令
 
 ## 代码提交
