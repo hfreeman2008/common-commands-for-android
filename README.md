@@ -239,6 +239,7 @@ adb shell am start -a "android.settings.APPLICATION_DETAILS_SETTINGS" -d "packag
 
 
 - 发送广播
+
 ```makefile
 adb shell am broadcast com.antutu.benchmark.full.3D_RUN
 adb shell am broadcast -a  android.intent.action.BOOT_COMPLETED
@@ -281,6 +282,42 @@ adb shell am broadcast -a com.smarteye.mpu  --ei "scanCode" "185"  --ez "longPre
 adb shell am broadcast -a android.intent.action.MASTER_CLEAR -f 0x01000000
 
 ```
+
+- 启动服务
+
+```makefile
+adb shell am startservice
+
+启动服务的基本语法是：
+adb shell am startservice <服务的完整路径>
+
+adb shell am startservice com.example.app/.MyService
+
+传递一个名为 key 的字符串：
+adb shell am startservice -d "com.example.app/.MyService" --es "key" "value"
+
+传递一个名为 num 的整数：
+adb shell am startservice -d "com.example.app/.MyService" --ei "num" 10
+
+传递一个名为 isTrue 的布尔值：
+adb shell am startservice -d "com.example.app/.MyService" --ez "isTrue" true
+
+传递一个名为 extra 的额外Intent：
+adb shell am startservice -d "com.example.app/.MyService" -e "extra" "extraValue"
+
+传递一个名为 numArray 的整数数组：
+adb shell am startservice -d "com.example.app/.MyService" --ei "numArray" [1,2,3,4,5]
+
+传递一个名为 strArray 的字符串数组：
+adb shell am startservice -d "com.example.app/.MyService" --es "strArray" ["str1","str2","str3"]
+
+传递一个名为 bundle 的Bundle：
+adb shell am startservice -a "bundle"
+```
+
+
+
+
 
 ***
 
