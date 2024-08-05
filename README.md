@@ -473,7 +473,12 @@ git reset --hard && git clean -df
 git reset --hard id && git clean -df
 git reset --hard id && git clean -df && git reset --hard HEAD^
 git reset --hard id
+
+//强行以服务器的代码覆盖本地代码，本地代码会删除
+git reset --hard origin/分支名
+git reset --hard origin/SC780_Dev
 ```
+
 
 - git rebase
 
