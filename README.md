@@ -188,6 +188,7 @@ adb pull /data/system/dropbox/ ./dropbox
 logcat
 1.adb logcat -G 1m 增大到1MBytes
 2.Settings -> Developer options -> Logger buffer size设置
+开发者选项里的系统日志缓存大小，实际上修改的是系统属性值：persist.logd.size
 
 dmesg
 CONFIG_LOG_BUF_SHIFT, 16 -> 2^16 = 64KByte 17 -> 2^17 = 128KByte
