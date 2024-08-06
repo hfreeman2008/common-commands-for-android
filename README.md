@@ -1269,29 +1269,20 @@ java -jar signapk.jar platform.x509.pem platform.pk8 old.apk new.apk
 
 ***
 
-```makefile
-
-```
-
+## 系统属性
 
 ```makefile
-
+persist.xxx.xxx
+保存在文件：
+/data/property/persistent_properties
 ```
 
-
-```makefile
-
-```
-
+***
 
 ```makefile
 
 ```
 
-
-```makefile
-
-```
 
 ***
 
