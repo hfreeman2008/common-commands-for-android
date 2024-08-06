@@ -181,6 +181,16 @@ adb logcat -c && adb logcat -s ActivityTaskManager
 dropbox日志：
 对于触发watchdog时，生成的dropbox文件的tag是system_server_watchdog，内容是traces以及相应的blocked信息
 adb pull /data/system/dropbox/ ./dropbox
+
+
+
+增大日志缓存
+logcat
+1.adb logcat -G 1m 增大到1MBytes
+2.Settings -> Developer options -> Logger buffer size设置
+
+dmesg
+CONFIG_LOG_BUF_SHIFT, 16 -> 2^16 = 64KByte 17 -> 2^17 = 128KByte
 ```
 
 
