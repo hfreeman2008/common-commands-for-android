@@ -421,6 +421,11 @@ adb shell  wm dismiss-keyguard
 # dumpsys 命令
 
 ```makefile
+dumpsys命令列表：
+adb shell dumpsys -l
+
+adb shell dumpsys lights
+
 adb shell dumpsys activity activities
 adb shell "dumpsys activity | grep -A 35 -i 'from top to'"
 adb shell "dumpsys | grep -i -A 4 'mCurrentFocus'"
