@@ -168,6 +168,12 @@ adb logcat -s DEBUG
 
 adb logcat -s Watchdog
 
+
+查看死机，crsh，anr，等日志：
+Watchdog|crash|die|block|kill|F DEBUG|AndroidRuntime|anr|Application is not responding|fatal
+Watchdog|crash|die|block|kill|F DEBUG|AndroidRuntime|anr|Application is not responding|fatal|GOODBYE
+
+
 抓取kernel log：
 adb shell cat /proc/kmsg > kernel.log
 adb shell dmesg > kernel_001.log
